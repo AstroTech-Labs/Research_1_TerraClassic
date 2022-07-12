@@ -113,12 +113,12 @@ except:
 
 async def get_historical_market_swap_txs():
 
-    offset = 285487736  # But was halted a second time at block 7607789
+    offset = 284257636  # But was halted a second time at block 7607789
     session = aiohttp.ClientSession()
     while(1):
         tasks = []
 
-        for i in range(0, 30):
+        for i in range(0, 50):
             task = asyncio.ensure_future(fetch_data(session, offset))
             tasks.append(task)
             offset = offset - 100
@@ -167,7 +167,7 @@ async def get_historical_market_swap_txs():
             f'./txs_data/market_swap_send_txs.csv', index=False)
         unidentified_txs.to_csv(
             f'./txs_data/unidentified_txs.csv', index=False)
-        await asyncio.sleep(15)
+        await asyncio.sleep(3)
 
 
 async def fetch_data(session, offset):
@@ -182,7 +182,7 @@ async def fetch_data(session, offset):
                     break
                 except Exception as e:
                     print(e)
-                    await asyncio.sleep(90)
+                    await asyncio.sleep(70)
                     continue
 
         for tx in response['txs']:
