@@ -113,12 +113,12 @@ except:
 
 async def get_historical_market_swap_txs():
 
-    offset = 281998136  # But was halted a second time at block 7607789
+    offset = 281892836  # But was halted a second time at block 7607789
     session = aiohttp.ClientSession()
     while(1):
         tasks = []
 
-        for i in range(0, 50):
+        for i in range(0, 250):
             task = asyncio.ensure_future(fetch_data(session, offset))
             tasks.append(task)
             offset = offset - 100
