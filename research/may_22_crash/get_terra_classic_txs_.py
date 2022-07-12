@@ -113,7 +113,7 @@ except:
 
 async def get_historical_market_swap_txs():
 
-    offset = 284257636  # But was halted a second time at block 7607789
+    offset = 281998136  # But was halted a second time at block 7607789
     session = aiohttp.ClientSession()
     while(1):
         tasks = []
