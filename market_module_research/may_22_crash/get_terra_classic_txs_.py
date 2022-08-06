@@ -7,105 +7,105 @@ import time
 
 
 try:
-    staking_txs = pd.read_csv("./txs_data/staking_txs.csv")
+    staking_txs = pd.read_csv("txs_data/staking_txs.csv")
 except:
     staking_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    slashing_txs = pd.read_csv("./txs_data/slashing_txs.csv")
+    slashing_txs = pd.read_csv("txs_data/slashing_txs.csv")
 except:
     slashing_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    ibc_client_txs = pd.read_csv("./txs_data/ibc_client_txs.csv")
+    ibc_client_txs = pd.read_csv("txs_data/ibc_client_txs.csv")
 except:
     ibc_client_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    ibc_channel_txs = pd.read_csv("./txs_data/ibc_channel_txs.csv")
+    ibc_channel_txs = pd.read_csv("txs_data/ibc_channel_txs.csv")
 except:
     ibc_channel_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    ibc_connection_txs = pd.read_csv("./txs_data/ibc_connection_txs.csv")
+    ibc_connection_txs = pd.read_csv("txs_data/ibc_connection_txs.csv")
 except:
     ibc_connection_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    distribution_txs = pd.read_csv("./txs_data/distribution_txs.csv")
+    distribution_txs = pd.read_csv("txs_data/distribution_txs.csv")
 except:
     distribution_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    crisis_txs = pd.read_csv("./txs_data/crisis_txs.csv")
+    crisis_txs = pd.read_csv("txs_data/crisis_txs.csv")
 except:
     crisis_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    evidence_txs = pd.read_csv("./txs_data/evidence_txs.csv")
+    evidence_txs = pd.read_csv("txs_data/evidence_txs.csv")
 except:
     evidence_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    feegrant_txs = pd.read_csv("./txs_data/feegrant_txs.csv")
+    feegrant_txs = pd.read_csv("txs_data/feegrant_txs.csv")
 except:
     feegrant_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    gov_txs = pd.read_csv("./txs_data/gov_txs.csv")
+    gov_txs = pd.read_csv("txs_data/gov_txs.csv")
 except:
     gov_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    upgrade_txs = pd.read_csv("./txs_data/upgrade_txs.csv")
+    upgrade_txs = pd.read_csv("txs_data/upgrade_txs.csv")
 except:
     upgrade_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    params_txs = pd.read_csv("./txs_data/params_txs.csv")
+    params_txs = pd.read_csv("txs_data/params_txs.csv")
 except:
     params_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    gov_vote_txs = pd.read_csv("./txs_data/gov_vote_txs.csv")
+    gov_vote_txs = pd.read_csv("txs_data/gov_vote_txs.csv")
 except:
     gov_vote_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'voter', 'option', 'proposal_id'])
 
 try:
     exchange_rate_vote_txs = pd.read_csv(
-        "./txs_data/exchange_rate_vote_txs.csv")
+        "txs_data/exchange_rate_vote_txs.csv")
 except:
     exchange_rate_vote_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'salt', 'feeder', 'validator', 'exchange_rates'])
 
 try:
-    unidentified_txs = pd.read_csv("./txs_data/unidentified_txs.csv")
+    unidentified_txs = pd.read_csv("txs_data/unidentified_txs.csv")
 except:
     unidentified_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'TxType'])
 
 try:
-    market_swap_txs = pd.read_csv("./txs_data/market_swap_txs.csv")
+    market_swap_txs = pd.read_csv("txs_data/market_swap_txs.csv")
 except:
     market_swap_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'ask_denom', 'burner', 'tokens_burnt', 'minter', 'tokens_minted', 'offer_coin', 'trader', 'recipient', 'swap_coin', 'swap_fee'])
 
 try:
     market_swap_send_txs = pd.read_csv(
-        "./txs_data/market_swap_send_txs.csv")
+        "txs_data/market_swap_send_txs.csv")
 except:
     market_swap_send_txs = pd.DataFrame(
         [], columns=['TxHash', 'BlockHeight', 'Sender', 'ask_denom', 'burner', 'tokens_burnt', 'minter', 'tokens_minted', 'offer_coin', 'trader', 'recipient', 'swap_coin', 'swap_fee'])
