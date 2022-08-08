@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 try:
-    swap_txs = pd.read_csv("astroport_txs_data/astroport_swap_txs.csv")
+    swap_txs = pd.read_csv("astroport_txs_data/astroport_swap_txs1.csv")
 except:
     swap_txs = pd.DataFrame([], columns = ['TxHash','BlockHeight','UserAddress','offer_asset','offer_amount','ask_asset','return_amount','tax_amount','spread_amount','commission_amount','maker_fee_amount','belief_price' ])
 
@@ -16,13 +16,13 @@ astroport_lunc_ustc_pool = "terra1m6ywlgn6wrjuagcmmezzz2a029gtldhey5k552"
 
 async def get_luna_ust_txs( debug=True):
 
-    offset = 286886635  
+    offset = 279037235  
     session = aiohttp.ClientSession()
 
     while(1):
         tasks = []
 
-        for i in range(0, 50):
+        for i in range(0, 250):
             task = asyncio.ensure_future(fetch_data(session, offset))
             tasks.append(task)
             offset = offset - 100
@@ -35,7 +35,7 @@ async def get_luna_ust_txs( debug=True):
         print(f'fetch_data -::- Threw exceptions: {exceptions}')
 
         swap_txs.to_csv(
-            f'./astroport_txs_data/astroport_swap_txs.csv', index=False)
+            f'./astroport_txs_data/astroport_swap_txs1.csv', index=False)
 
 
 async def fetch_data(session, offset):
