@@ -1,0 +1,20 @@
+{
+    "type": "module",
+    "dependencies": {
+        "@flipsidecrypto/sdk": "^1.0.0-alpha.0",
+        "@terra-money/terra.js": "^2.1.23",
+        "axios": "^0.27.2",
+        "axios-retry": "^3.2.5",
+        "bech32": "^2.0.0",
+        "ts-node": "^10.8.0"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.26.0",
+        "@typescript-eslint/parser": "^5.26.0",
+        "eslint": "^8.16.0",
+        "typescript": "^4.6.3"
+    },
+    "engines": {
+        "node": ">=16"
+    }
+}
