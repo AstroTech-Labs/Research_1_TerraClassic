@@ -7,7 +7,7 @@ let ts3 = "https://columbus-lcd.terra.dev";
 
 
 const terra = new LCDClient({
-  URL: ts2,
+  URL: ts,
   chainID: "columbus-5",
 });
 
