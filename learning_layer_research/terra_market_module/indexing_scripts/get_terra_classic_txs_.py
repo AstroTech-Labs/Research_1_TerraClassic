@@ -113,10 +113,14 @@ except:
 
 async def get_historical_market_swap_txs():
 
-    offset = 247339436  # But was halted a second time at block 7607789
+    offset = 288000000  # But was halted a second time at block 7607789
     session = aiohttp.ClientSession()
     while(1):
         tasks = []
+
+        # We already have data before 7593889 block
+        if offset < 281000000:
+            return
 
         for i in range(0, 250):
             task = asyncio.ensure_future(fetch_data(session, offset))
@@ -174,7 +178,7 @@ async def fetch_data(session, offset):
     try:
         URL = "https://fcd.terra.dev/v1/txs?offset=" + \
             str(offset) + "&limit=100"
-        print(URL)
+        # print(URL)
         while(1):
             async with session.get(URL) as response_:
                 try:
