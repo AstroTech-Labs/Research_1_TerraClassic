@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 try:
-    swap_txs = pd.read_csv("../astroport_txs_data/astroport_swap_txs12.csv")
+    swap_txs = pd.read_csv("../astroport_txs_data/astroport_swap_txs13.csv")
 except:
     swap_txs = pd.DataFrame([], columns = ['TxHash','BlockHeight','UserAddress','offer_asset','offer_amount','ask_asset','return_amount','tax_amount','spread_amount','commission_amount','maker_fee_amount','belief_price' ])
 
@@ -16,13 +16,13 @@ astroport_lunc_ustc_pool = "terra1m6ywlgn6wrjuagcmmezzz2a029gtldhey5k552"
 
 async def get_luna_ust_txs( debug=True):
 
-    offset = 259695200  
+    offset = 287900000
     session = aiohttp.ClientSession()
 
     while(1):
         tasks = []
 
-        for i in range(0, 250):
+        for i in range(0, 150):
             task = asyncio.ensure_future(fetch_data(session, offset))
             tasks.append(task)
             offset = offset - 100
@@ -35,15 +35,15 @@ async def get_luna_ust_txs( debug=True):
         print(f'fetch_data -::- Threw exceptions: {exceptions}')
 
         swap_txs.to_csv(
-            f'../astroport_txs_data/astroport_swap_txs12.csv', index=False)
+            f'../astroport_txs_data/astroport_swap_txs13.csv', index=False)
 
 
 async def fetch_data(session, offset):
     try:
         URL = "https://fcd.terra.dev/v1/txs?offset=" + str(offset) + "&account=" + astroport_lunc_ustc_pool + "&limit=100"
         # response = requests.get(url = URL).json()
-        # print(URL)
         print(URL)
+        # print(URL)
 
         while(1):
             async with session.get(URL) as response_:
@@ -59,7 +59,8 @@ async def fetch_data(session, offset):
             try:
                 txhash = tx['txhash']
                 block_height = tx['height']
-                # print(txhash)
+                if int(block_height) < 7622720:
+                    break
 
                 offer_amount = 0
                 return_amount = 0
